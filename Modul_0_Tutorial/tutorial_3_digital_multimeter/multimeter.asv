@@ -1,0 +1,4 @@
+clear
+clc
+
+digital_multimeter = elvis.Multimeter('resistance');

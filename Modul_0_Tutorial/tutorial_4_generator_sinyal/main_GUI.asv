@@ -1,0 +1,26 @@
+clear % membersihkan history
+clc % membersihkan command window
+
+import elvis.MultimeterAuto;
+
+dmm = elvis.MultimeterAuto('dcvoltage');
+
+sampling = 1000; % millisec
+N = 100;
+starttime = tic;
+elapsedtime = 0;
+nexttime = elapsedtime + sampling*0.001;
+data = zeros(1,100);
+idx = 0;
+
+while true
+    elapsedtime = toc(starttime);
+    if elapsedtime >= nexttime
+        data(idx) = dmm.ReadData;
+        nextime = elapsedtime + sampling*0.001;
+        idx = idx+1;
+    end
+    
+    if 
+end
+
