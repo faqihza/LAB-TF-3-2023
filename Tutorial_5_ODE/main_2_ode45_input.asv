@@ -1,0 +1,13 @@
+tspan = [0,10];
+y0 = 1;
+
+[t,y] = ode45(@odefunc, tspan, y0);
+
+plot(t,y)
+
+function dhdt = tanki(t,h,qin)
+    A = 10;
+
+    dhdt = (qin - h)/A;
+end
+

@@ -1,0 +1,17 @@
+tspan = [0,100];
+y0 = [0 0];
+f = 10;
+
+[t,y] = ode45(@(t,y) springmass(t,y,f), tspan, y0);
+
+
+plot(t,y())
+
+function dydt = springmass(t,y,f)
+    k1 = 1;
+    k2 = 1;
+    m = 5;
+
+    dydt = [0 1;-k2/m -k1/m]*y + [0;1/m]*f;
+end
+
